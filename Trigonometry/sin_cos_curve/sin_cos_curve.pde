@@ -27,7 +27,7 @@ void draw()
   }
 
 
-  startTime = startTime + xspacing;
+   startTime += xspacing;
 
   drawCircle(circleSize, 200, 350, maxDots);
 }

@@ -11,8 +11,8 @@ void setup() {
 
 void draw() {
 
- x = x + xDelta;
- y = y + yDelta;
+ x += xDelta;
+ y += yDelta;
   
   if((x > width - 10) || (x < 10)) {
     xDelta = -xDelta;
@@ -24,7 +24,7 @@ void draw() {
 
 	background(100);
 
-PVector mouse = new PVector(pmouseX, mouseY);
+PVector mouse = new PVector(mouseX, mouseY);
 
 	v1.lerp(mouse, 0.05);
 
