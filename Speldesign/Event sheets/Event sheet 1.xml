@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="484695599692160">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="790441520156217" type="Nario">
+                    <param id="0" name="Object">Enemies</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="958249939480309">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="407579676030598" type="Nario" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="648349295889163" type="Enemies" />
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="518078907310321" type="Nario">
+                            <param id="0" name="Vector Y">-800</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="403392224377977">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="197934877164266" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="672184405970286" type="System">
+                    <param id="0" name="Object to create">Enemies</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">520+(200)</param>
+                    <param id="3" name="Y">-20</param>
+                </action>
+                <action id="-10" name="Set value" sid="767851150358154" type="Enemies">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Value">choose(&quot;left&quot;,&quot;right&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="447805916682815">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="447027800053004" type="Enemies">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;left&quot;</param>
+                </condition>
+                <condition id="-2" name="Compare Y" sid="881584216970634" type="Enemies">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">260</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="168995116005608" type="Enemies">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="350804947727598">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="538251902914141" type="Enemies">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;right&quot;</param>
+                </condition>
+                <condition id="-2" name="Compare Y" sid="389348428246682" type="Enemies">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">260</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="988594943526751" type="Enemies">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="592471159257865">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="247510884649264" type="Enemies">
+                    <param id="0" name="Object">Destroyer</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="273342007301276" type="Enemies" />
+            </actions>
+        </event-block>
+        <event-block sid="587017205651815">
+            <conditions>
+                <condition behavior="8Direction" id="0" name="Is moving" sid="909115583038832" type="Destroyer" />
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>
