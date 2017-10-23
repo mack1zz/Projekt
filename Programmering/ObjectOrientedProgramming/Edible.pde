@@ -1,3 +1,0 @@
-interface Edible{
-  void eat();
-}

@@ -1,9 +1,14 @@
-void setup()
+BallManager ballMgr;
+
+void setup() 
 {
-  size (640, 480);
+	size(640, 480);
+
+	ballMgr = new BallManager(80);
 }
 
 void draw() 
 {
-  line(20, 20, 40, 80);
+	background(100);
+	ballMgr.update();
 }

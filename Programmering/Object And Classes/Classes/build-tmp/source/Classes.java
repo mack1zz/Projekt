@@ -14,16 +14,67 @@ import java.io.IOException;
 
 public class Classes extends PApplet {
 
-public void setup()
+BallManager ballMgr;
+
+public void setup() 
 {
-  
+	
+
+	ballMgr = new BallManager(80);
 }
 
 public void draw() 
 {
-  line(20, 20, 40, 80);
+	background(100);
+	ballMgr.update();
 }
-  public void settings() {  size (640, 480); }
+class Ball
+{
+	float x, y;
+	float vx, vy;  
+  
+  Ball(float x, float y)
+	
+	{
+	this.x = x;
+	this.y = y;	
+	vx = random (10) - 5;
+	vy = random (10) - 5;
+	}
+
+  public void update()
+	
+	{
+	x += vx;
+    y += vy;
+	ellipse(x, y, 50, 50);
+	}
+
+ }
+class BallManager
+{
+Ball[] balls;
+  
+  BallManager(int amount)
+  
+  {
+  balls = new Ball[amount];
+  for(int i = 0; i < balls.length; i++)
+    {
+    balls[i] = new Ball(random(width), random(height));
+    }
+  }
+  
+  public void update()
+
+  {
+  for(int i = 0; i < balls.length; i++)
+    {
+    balls[i].update();
+    }
+  }
+}
+  public void settings() { 	size(640, 480); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Classes" };
     if (passedArgs != null) {

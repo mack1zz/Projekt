@@ -14,11 +14,13 @@ void draw() {
  x += xDelta;
  y += yDelta;
   
-  if((x > width - 10) || (x < 10)) {
+  if((x > width - 10) || (x < 10)) 
+  {
     xDelta = -xDelta;
   }
   
-  if(( y > height - 10) || (y < 10)) {
+  if(( y > height - 10) || (y < 10)) 
+  {
     yDelta = -yDelta;
   }
 
