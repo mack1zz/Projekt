@@ -1191,6 +1191,7 @@ MonoBehaviour:
   speed: 10
   countText: {fileID: 490585407}
   winText: {fileID: 1896931992}
+  state: 0
 --- !u!54 &1417592527
 Rigidbody:
   m_ObjectHideFlags: 0
